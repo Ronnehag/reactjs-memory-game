@@ -2,15 +2,20 @@
   "name": "memory",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/Ronnehag/reactjs-memory-game",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.5",
     "react-card-flip": "^0.5.0",
     "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
