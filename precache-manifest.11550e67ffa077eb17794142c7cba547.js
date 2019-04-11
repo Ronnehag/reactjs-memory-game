@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/reactjs-memory-game/static/js/runtime~main.dda81035.js"
   },
   {
-    "revision": "d16b0b2005d0ea71114f",
+    "revision": "9031f4cbb057c2905eaf",
     "url": "/reactjs-memory-game/static/js/main.89ca3457.chunk.js"
   },
   {
@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "/reactjs-memory-game/static/js/2.5b1188b5.chunk.js"
   },
   {
-    "revision": "d16b0b2005d0ea71114f",
-    "url": "/reactjs-memory-game/static/css/main.fe81933e.chunk.css"
+    "revision": "9031f4cbb057c2905eaf",
+    "url": "/reactjs-memory-game/static/css/main.0b816ae5.chunk.css"
   },
   {
-    "revision": "8acb39e65efa0cc88a2a5fa7914b8fb8",
+    "revision": "cc461bff750aa790d19310414acc85a0",
     "url": "/reactjs-memory-game/index.html"
   }
 ];
