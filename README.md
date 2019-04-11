@@ -9,3 +9,7 @@ Game is built using React.js.
 - Cards flip is made using ReactCardFlip.
 
 The game is a hobby project to practise React as well as algorithms and game logic.
+
+## Demo
+
+https://ronnehag.github.io/reactjs-memory-game/#/
