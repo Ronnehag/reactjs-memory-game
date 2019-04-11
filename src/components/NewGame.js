@@ -7,8 +7,9 @@ export class NewGame extends Component {
   }
 
   handleClick = e => {
-    this.setState({ visible: !this.state.visible });
-    this.props.play()
+    this.setState({ visible: !this.state.visible }, () => {
+      this.props.play()
+    });
   };
 
   render() {
@@ -17,7 +18,7 @@ export class NewGame extends Component {
       <div className="menu-item">
         <button className="btn btn-play"
           onClick={this.handleClick}
-          style={{visibility: visible ? "visible" : "hidden"}}>
+          style={{ visibility: visible ? "visible" : "hidden" }}>
           Play
         </button>
       </div >

@@ -20,15 +20,27 @@ body {
 .memoryCard{
   height: 80px;
   width: 120px;
+  border: 1.5px solid transparent;
+  transition: all .3s ease-in;
+}
+.memoryCard.front:hover{
+  cursor: pointer;
+  border: 1.5px solid rgb(40,111,251, 0.5);
 }
 .btn {
-  padding: 5px 15px;
-  background: #ccc;
-  margin-right: 10px;
-
+  padding: 12px 25px;
+  background: #035A96;
+  border: 1px solid #035A96;
+  color: #fff;
+  transition: all .4s ease-in;
+}
+.btn:hover{
+  background: rgb(40,111,251, 0.5);
+  border: 1px solid rgb(40,111,251, 0.5);
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .flex-container {
-  margin-top: 15px;
   display: flex;
 }
 .cards{
@@ -38,7 +50,7 @@ body {
 }
 .card{
   flex: 1 0 calc(21% - 1em);
-  padding: 3px;
+  padding: 6px 0 6px 0;
 }
 .menu{
   margin: 0 auto;

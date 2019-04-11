@@ -50,10 +50,6 @@ class App extends Component {
     });
   }
 
-  componentDidMount() {
-    this.generateDeck();
-  }
-
   shuffleCards = (a) => {
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -96,7 +92,7 @@ class App extends Component {
         <div className="message">
             {won && (<h2>You win!</h2>)}
           </div>
-          <NewGame game={newGame} play={this.initGame} />
+          <NewGame play={this.initGame} />
           {won && (<PlayAgain again={this.resetGame} />)}
         </div>
       </div>

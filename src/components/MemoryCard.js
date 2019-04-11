@@ -14,7 +14,7 @@ export class MemoryCard extends Component {
       <div className="card">
         <ReactCardFlip isFlipped={flipped} flipDirection="horizontal">
           <div id={id}
-            className="memoryCard"
+            className="memoryCard front"
             onClick={this.flipCard}
             style={cardBack}
             key="front"
@@ -28,6 +28,7 @@ export class MemoryCard extends Component {
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat", backgroundPosition: "center",
               backgroundColor: found ? "green" : "#3700B3",
+              cursor : found ? "" : "pointer",
             }}
           >
           </div>
