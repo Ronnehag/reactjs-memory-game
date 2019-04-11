@@ -11,6 +11,10 @@ body {
 .message{
   color: #fff;
 }
+h2{
+  padding: 0;
+  margin: 0;
+}
 .board-container{
   width: 60%;
   margin: 50px auto;
