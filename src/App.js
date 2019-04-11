@@ -85,7 +85,7 @@ class App extends Component {
           {newGame ?
             (<GameBoard cards={cards} won={this.hasWon} click={this.countClicks} />)
             : null}
-            {newGame && (<p className="message center">Total clicks: {clicks}</p>)}
+            {newGame && (<p className="message center">Total flips: {clicks}</p>)}
         </div>
 
         <div className="menu">

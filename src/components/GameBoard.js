@@ -42,7 +42,6 @@ export class GameBoard extends Component {
   handleFlip = id => {
     switch (this.countFlippedCards()) {
       case 0:
-        this.props.click();
         this.flipCard(id);
         break;
       case 1:
