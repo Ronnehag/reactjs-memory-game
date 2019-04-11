@@ -2,7 +2,7 @@
   "name": "memory",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Ronnehag/reactjs-memory-game",
+  "homepage": "https://ronnehag.github.io/reactjs-memory-game",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "gh-pages": "^2.0.1",
