@@ -27,17 +27,18 @@ class App extends Component {
     for (let i = 1; i < amount + 1; i++) {
       let id = createId();
       let id2 = createId();
+      let rand = Math.floor(Math.random() * 300) + 1;
       const card1 = {
         id: id,
         matchesId: id2,
-        url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`,
+        url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${rand}.png`,
         flipped: false,
         found: false,
       }
       const card2 = {
         id: id2,
         matchesId: id,
-        url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`,
+        url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${rand}.png`,
         flipped: false,
         found: false,
       }
