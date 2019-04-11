@@ -11,7 +11,7 @@ export class MemoryCard extends Component {
   render() {
     const { id, imgUrl, flipped, found } = this.props;
     return (
-      <div>
+      <div className="card">
         <ReactCardFlip isFlipped={flipped} flipDirection="horizontal">
           <div id={id}
             className="memoryCard"
@@ -27,7 +27,7 @@ export class MemoryCard extends Component {
               backgroundImage: `url(${imgUrl})`,
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat", backgroundPosition: "center",
-              border: found ? "1px solid green" : "1px solid transparent"
+              backgroundColor: found ? "green" : "#3700B3",
             }}
           >
           </div>
@@ -39,7 +39,6 @@ export class MemoryCard extends Component {
 
 const cardBack = {
   background: "#3700B3",
-  border: "1px solid transparent",
 }
 
 

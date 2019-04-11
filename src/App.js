@@ -9,42 +9,19 @@ class App extends Component {
       newGame: false,
       won: false,
       cards: [],
-      memoryCards: [
-        {
-          id: 1,
-          color: "red",
-          matchesId: 2,
-          flipped: false,
-          found: false
-        },
-        {
-          id: 2,
-          color: "red",
-          matchesId: 1,
-          flipped: false,
-          found: false
-        },
-        {
-          id: 3,
-          color: "blue",
-          matchesId: 4,
-          flipped: false,
-          found: false
-        },
-        {
-          id: 4,
-          color: "blue",
-          matchesId: 3,
-          flipped: false,
-          found: false
-        }
-      ]
+      clicks : 0
     };
   }
 
   state = App.initState();
 
-  componentDidMount() {
+  countClicks = () => {
+    this.setState((prevState) => ({
+        clicks : prevState.clicks + 1
+    }));
+  }
+
+  generateDeck = () => {
     let amount = 10;
     let cards = [];
     for (let i = 1; i < amount + 1; i++) {
@@ -73,6 +50,10 @@ class App extends Component {
     });
   }
 
+  componentDidMount() {
+    this.generateDeck();
+  }
+
   shuffleCards = (a) => {
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -82,40 +63,41 @@ class App extends Component {
   }
 
   resetGame = () => {
-    this.setState(App.initState(), () => this.initGame());
+    this.setState(App.initState(), () => {
+      this.initGame()
+    });
   }
 
   hasWon = () => {
     this.setState({
       won: true
     });
-    // TODO RESET GAME AND NEWGAME BUTTON
-    // STATE INIT STATE
   };
 
   initGame = () => {
+    this.generateDeck();
     this.setState({
       newGame: true
     });
   };
 
   render() {
-    const { cards, newGame, won } = this.state;
+    const { cards, newGame, won, clicks } = this.state;
     return (
       <div>
-        <div className="flex-container">
-          <div className="message">
-            {won ? (<h2>You win!</h2>) : null}
-          </div>
-        </div>
-        <div className="menu flex-container">
-          <NewGame game={newGame} play={this.initGame} />
-          {won ? (<PlayAgain again={this.resetGame} />) : null}
-        </div>
         <div className="board-container">
           {newGame ?
-            (<GameBoard cards={cards} won={this.hasWon} />)
+            (<GameBoard cards={cards} won={this.hasWon} click={this.countClicks} />)
             : null}
+            {newGame && (<p className="message center">Total clicks: {clicks}</p>)}
+        </div>
+
+        <div className="menu">
+        <div className="message">
+            {won && (<h2>You win!</h2>)}
+          </div>
+          <NewGame game={newGame} play={this.initGame} />
+          {won && (<PlayAgain again={this.resetGame} />)}
         </div>
       </div>
     );

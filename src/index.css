@@ -1,21 +1,21 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  background: #ffffff;
-
+  background: #1B1B1B;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.message{
+  color: #fff;
 }
 .board-container{
-  max-width: 960px;
-  margin: 150px auto 0 auto;
+  width: 60%;
+  margin: 50px auto;
+  text-align: left;
 }
 .memoryCard{
   height: 80px;
@@ -25,14 +25,38 @@ code {
   padding: 5px 15px;
   background: #ccc;
   margin-right: 10px;
+
 }
 .flex-container {
+  margin-top: 15px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+}
+.cards{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card{
+  flex: 1 0 calc(21% - 1em);
+  padding: 3px;
 }
 .menu{
   margin: 0 auto;
   text-align: center;
+}
+
+@media only screen and(max-width: 768px){
+  .board-container{
+    width: 100%;
+    margin: 50px auto;
+  }
+  .flex-container{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+  }
+  .memoryCard{
+    height: 50px;
+    width: 80px;
+  }
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Grid from '@material-ui/core/Grid';
 import MemoryCard from './MemoryCard';
 
 export class GameBoard extends Component {
@@ -8,7 +7,7 @@ export class GameBoard extends Component {
     memoryCards: []
   }
 
-  componentDidUpdate(prevprops, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.memoryCards !== this.state.memoryCards) {
       this.setState({
         memoryCards: this.state.memoryCards
@@ -43,15 +42,16 @@ export class GameBoard extends Component {
   handleFlip = id => {
     switch (this.countFlippedCards()) {
       case 0:
+        this.props.click();
         this.flipCard(id);
         break;
       case 1:
+        this.props.click();
         this.flipCard(id, () => {
           this.isMatch();
         });
         break;
       default:
-        console.log("None");
         break;
     }
   };
@@ -97,25 +97,23 @@ export class GameBoard extends Component {
   createBoard = () =>
     this.state.memoryCards.length ? (
       this.state.memoryCards.map(card => (
-        <Grid item xs={3} key={card.id}>
-          <MemoryCard
-            flipped={card.flipped}
-            found={card.found}
-            id={card.id}
-            imgUrl={card.url}
-            flip={this.handleFlip} />
-        </Grid>
+        <MemoryCard
+          key={card.id}
+          flipped={card.flipped}
+          found={card.found}
+          id={card.id}
+          imgUrl={card.url}
+          flip={this.handleFlip} />
       ))
     ) : (
         <p>Loading cards...</p>
       );
 
-
   render() {
     return (
-      <Grid container spacing={8} justify="center">
+      <div className="cards">
         {this.createBoard()}
-      </Grid>
+      </div>
     );
   }
 }
