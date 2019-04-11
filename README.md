@@ -7,3 +7,5 @@ Game is built using React.js.
 - Can reset the game and play again after won.
 - Basic styling done without any CSS library.
 - Cards flip is made using ReactCardFlip.
+
+The game is a hobby project to practise React as well as algorithms and game logic.
